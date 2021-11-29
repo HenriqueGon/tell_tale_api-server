@@ -23,8 +23,8 @@ public class Tale {
   @Column(nullable = true, length = 400)
   private String description;
 
-  @ManyToOne
-  private User user;
+  // @ManyToOne
+  // private User user;
 
   public Long getId() {
     return id;

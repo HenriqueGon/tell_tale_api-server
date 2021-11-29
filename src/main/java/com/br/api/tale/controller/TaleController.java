@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -31,6 +32,13 @@ public class TaleController {
 	public Tale add(@RequestBody Tale tale) {
 		return this.taleRepository.save(tale);
 	}
+
+  @PutMapping
+  public void edit(@RequestBody Tale tale) {
+    if (tale.getId() > 0) {
+      this.taleRepository.save(tale);
+    }
+  }
 	
 	@DeleteMapping("/tales")
 	public void remove(@RequestBody Tale tale) {

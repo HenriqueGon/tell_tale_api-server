@@ -1,16 +1,16 @@
 package com.br.api.tale.model;
 
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-import com.br.api.user.model.User;
+import javax.persistence.Table;
 
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GenerationType;
 
 @Entity
+@Table(name = "tale")
 public class Tale {
   
   @Id
@@ -19,6 +19,9 @@ public class Tale {
 
   @Column(nullable = false)
   private String name;
+
+  @Column(nullable = false)
+  private String urlImage;
 
   @Column(nullable = true, length = 400)
   private String description;
@@ -36,6 +39,14 @@ public class Tale {
 
   public void setName(String name) {
     this.name = name;
+  }
+  
+  public String getUrlImage() {
+    return urlImage;
+  }
+
+  public void setUrlImage(String urlImage) {
+    this.urlImage = urlImage;
   }
 
   public String getDescription() {

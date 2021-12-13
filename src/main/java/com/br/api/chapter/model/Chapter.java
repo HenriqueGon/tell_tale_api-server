@@ -6,10 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.br.api.tale.model.Tale;
 
 @Entity
+@Table(name = "chapter")
 public class Chapter {
   
   @Id

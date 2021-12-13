@@ -33,7 +33,7 @@ public class ChapterController {
     return this.chapterRepository.save(Chapter);
   }
 
-  @PutMapping
+  @PutMapping("/chapters/edit")
   public void edit(@RequestBody Chapter chapter) {
     if (chapter.getId() > 0) {
       this.chapterRepository.save(chapter);

@@ -2,9 +2,7 @@ package com.br.api.tale.model;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import javax.persistence.GeneratedValue;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GenerationType;
@@ -17,7 +15,7 @@ public class Tale {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false)
+  @Column(nullable = false, unique = true)
   private String name;
 
   @Column(nullable = false)

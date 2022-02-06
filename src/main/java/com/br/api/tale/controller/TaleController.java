@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.br.api.tale.model.Tale;
 
@@ -31,6 +32,11 @@ public class TaleController {
 	@GetMapping("/tales/{name}")
 	public List<Tale> findByName(@PathVariable("name") String name) {
 		return this.taleRepository.findByNameContaining(name);
+	}
+
+	@GetMapping("/tales/search/{id}")
+	public Optional<Tale> findByTaleId(@PathVariable("id") Long id) {
+		return this.taleRepository.findById(id);
 	}
 	
 	@PostMapping("/tales/save")
